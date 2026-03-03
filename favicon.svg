@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Red rounded square background -->
+  <rect width="64" height="64" rx="14" fill="#c0392b"/>
+  <!-- Shield-virus icon (white) centered -->
+  <path fill="white" d="M32 6 L52 14 L52 34 C52 45 43 54 32 58 C21 54 12 45 12 34 L12 14 Z" opacity="0.15"/>
+  <path fill="white" d="M32 9 L50 16.5 L50 34 C50 44 42 52.5 32 56 C22 52.5 14 44 14 34 L14 16.5 Z"/>
+  <!-- Virus circles on shield -->
+  <circle cx="32" cy="34" r="6" fill="#c0392b"/>
+  <circle cx="32" cy="22" r="2.2" fill="#c0392b"/>
+  <circle cx="32" cy="46" r="2.2" fill="#c0392b"/>
+  <circle cx="21" cy="28" r="2.2" fill="#c0392b"/>
+  <circle cx="43" cy="28" r="2.2" fill="#c0392b"/>
+  <circle cx="21" cy="40" r="2.2" fill="#c0392b"/>
+  <circle cx="43" cy="40" r="2.2" fill="#c0392b"/>
+  <!-- Virus spikes from center -->
+  <line x1="32" y1="28" x2="32" y2="22" stroke="#c0392b" stroke-width="2" stroke-linecap="round"/>
+  <line x1="32" y1="40" x2="32" y2="46" stroke="#c0392b" stroke-width="2" stroke-linecap="round"/>
+  <line x1="26.8" y1="31" x2="21.5" y2="28" stroke="#c0392b" stroke-width="2" stroke-linecap="round"/>
+  <line x1="37.2" y1="31" x2="42.5" y2="28" stroke="#c0392b" stroke-width="2" stroke-linecap="round"/>
+  <line x1="26.8" y1="37" x2="21.5" y2="40" stroke="#c0392b" stroke-width="2" stroke-linecap="round"/>
+  <line x1="37.2" y1="37" x2="42.5" y2="40" stroke="#c0392b" stroke-width="2" stroke-linecap="round"/>
+</svg>
