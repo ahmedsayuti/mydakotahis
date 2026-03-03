@@ -4,14 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-  
   <!-- ── SOCIAL MEDIA META TAGS ─────────────────────────────────────── -->
   <!-- Open Graph (Facebook, LinkedIn, WhatsApp, iMessage) -->
   <meta property="og:type"        content="website" />
   <meta property="og:site_name"   content="MyDakota HIS" />
-  <meta property="og:title"       content="MyDakota HIS – Childhood Disease Dashboard" />
-  <meta property="og:description" content="Real-time surveillance of childhood vaccine-preventable diseases across North Dakota's 53 counties. Explore Measles, Hepatitis B, Rotavirus, and RSV case data with interactive maps and charts." />
-  <meta property="og:url"         content="https://www.mydakotahis.com/" />
+  <meta property="og:title"       content="Contact Us – MyDakota HIS" />
+  <meta property="og:description" content="Get in touch with the MyDakota Health Intelligence System team. Submit data requests, media inquiries, or general questions about North Dakota disease surveillance." />
+  <meta property="og:url"         content="https://www.mydakotahis.com/contact/" />
   <meta property="og:image"       content="https://www.mydakotahis.com/og-image.png" />
   <meta property="og:image:width"  content="1200" />
   <meta property="og:image:height" content="630" />
@@ -21,16 +20,16 @@
   <!-- Twitter / X Card -->
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:site"        content="@MyDakotaHIS" />
-  <meta name="twitter:title"       content="MyDakota HIS – Childhood Disease Dashboard" />
-  <meta name="twitter:description" content="Real-time surveillance of childhood vaccine-preventable diseases across North Dakota's 53 counties. Explore Measles, Hepatitis B, Rotavirus, and RSV case data with interactive maps and charts." />
+  <meta name="twitter:title"       content="Contact Us – MyDakota HIS" />
+  <meta name="twitter:description" content="Get in touch with the MyDakota Health Intelligence System team. Submit data requests, media inquiries, or general questions about North Dakota disease surveillance." />
   <meta name="twitter:image"       content="https://www.mydakotahis.com/og-image.png" />
   <meta name="twitter:image:alt"   content="MyDakota HIS – North Dakota Childhood Disease Dashboard" />
 
   <!-- General SEO -->
-  <meta name="description" content="Real-time surveillance of childhood vaccine-preventable diseases across North Dakota's 53 counties. Explore Measles, Hepatitis B, Rotavirus, and RSV case data with interactive maps and charts." />
+  <meta name="description" content="Get in touch with the MyDakota Health Intelligence System team. Submit data requests, media inquiries, or general questions about North Dakota disease surveillance." />
   <meta name="keywords"    content="North Dakota, disease surveillance, childhood diseases, Measles, Hepatitis B, Rotavirus, RSV, vaccination coverage, public health, NDDoH, HIS dashboard" />
   <meta name="author"      content="North Dakota Department of Health – MyDakota HIS" />
-  <link  rel="canonical"   href="https://www.mydakotahis.com/" />
+  <link  rel="canonical"   href="https://www.mydakotahis.com/contact/" />
   <!-- ─────────────────────────────────────────────────────────────────── -->
   <title>MyDakota HIS – Contact Us</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -48,7 +47,8 @@
       --shadow-lg: 0 8px 40px rgba(26,39,68,0.13);
     }
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:"DM Sans",sans-serif; background:var(--bg); color:var(--primary); line-height:1.6; }
+    body { font-family:"DM Sans",sans-serif; background:var(--bg); color:var(--primary); line-height:1.6; overflow-x:hidden; }
+    * { min-width: 0; }
 
     /* ── HEADER ── */
     header { background:var(--primary); color:white; position:sticky; top:0; z-index:1000; box-shadow:0 2px 20px rgba(0,0,0,0.2); }
@@ -251,15 +251,86 @@
     footer strong { color:white; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width:900px) {
-      .contact-layout { grid-template-columns:1fr; }
-      .form-row { grid-template-columns:1fr; }
-      .page-hero h1 { font-size:2rem; }
+
+    /* ── RESPONSIVE / MOBILE ─────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .page-hero h1 { font-size: 2rem; }
     }
-    @media (max-width:600px) {
-      .form-card { padding:24px; }
-      main { padding:32px 16px 48px; }
+    @media (max-width: 768px) {
+      /* Header */
+      .header-inner { padding: 0 14px; height: auto; min-height: 56px; flex-wrap: wrap; gap: 6px; padding-top: 10px; padding-bottom: 10px; }
+      .logo { font-size: 1.1rem; }
+      .logo-icon { width: 30px; height: 30px; font-size: 0.9rem; }
+      .header-subtitle { font-size: 0.65rem; }
+      nav { gap: 2px; }
+      nav a { padding: 6px 8px; font-size: 0.75rem; }
+
+      /* Hero */
+      .page-hero { padding: 36px 16px 44px; }
+      .page-hero h1 { font-size: 1.7rem; }
+      .page-hero p { font-size: 0.88rem; }
+
+      /* Main */
+      main { padding: 24px 14px 48px; }
+
+      /* Form card */
+      .form-card { padding: 28px 20px; }
+      .form-card h2 { font-size: 1.35rem; }
+
+      /* Subject pills */
+      .subject-pills { gap: 6px; }
+      .subject-pill { padding: 5px 11px; font-size: 0.75rem; }
+
+      /* Form inputs */
+      .form-group input, .form-group select, .form-group textarea { font-size: 0.88rem; padding: 10px 12px; }
+      .form-group label { font-size: 0.72rem; }
+
+      /* Info cards */
+      .info-card { padding: 20px; }
+      .hours-grid { font-size: 0.82rem; gap: 3px 12px; }
+
+      /* Dept cards */
+      .dept-card { padding: 12px 14px; }
+      .dept-name { font-size: 0.84rem; }
+
+      /* FAQ */
+      .faq-q { font-size: 0.84rem; }
+      .faq-a { font-size: 0.82rem; }
+
+      /* Contact items */
+      .contact-item-text a, .contact-item-text span { font-size: 0.85rem; }
     }
+    @media (max-width: 480px) {
+      .header-inner { padding: 8px 12px; }
+      .logo { font-size: 1rem; gap: 8px; }
+      .logo-icon { width: 28px; height: 28px; font-size: 0.8rem; flex-shrink: 0; }
+      .header-subtitle { display: none; }
+      nav a { font-size: 0.72rem; padding: 5px 7px; }
+
+      .page-hero { padding: 28px 14px 36px; }
+      .page-hero h1 { font-size: 1.4rem; }
+      .hero-breadcrumb { font-size: 0.72rem; }
+
+      main { padding: 16px 12px 40px; }
+      .form-card { padding: 20px 16px; border-radius: 12px; }
+      .form-card h2 { font-size: 1.2rem; }
+      .form-card .form-intro { font-size: 0.83rem; }
+
+      .subject-pills { gap: 5px; }
+      .subject-pill { padding: 5px 10px; font-size: 0.72rem; }
+
+      .btn-submit { font-size: 0.92rem; padding: 13px; }
+
+      .contact-icon { width: 36px; height: 36px; font-size: 0.9rem; }
+      .info-card h3 { font-size: 1rem; }
+      .info-card { padding: 16px; border-radius: 10px; }
+
+      .dept-card { padding: 10px 12px; }
+      .status-banner { font-size: 0.78rem; padding: 10px 12px; }
+    }
+
   </style>
 </head>
 <body>
@@ -267,7 +338,7 @@
 <!-- HEADER -->
 <header>
   <div class="header-inner">
-    <a href="/" class="logo">
+    <a href="../" class="logo">
       <div class="logo-icon"><i class="fas fa-shield-virus"></i></div>
       <div>
         MyDakota HIS
@@ -275,9 +346,9 @@
       </div>
     </a>
     <nav>
-      <a href="/"><i class="fas fa-home"></i> Home</a>
-      <a href="/data/"><i class="fas fa-database"></i> Data</a>
-      <a href="/contact/" class="active"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="../"><i class="fas fa-home"></i> Home</a>
+      <a href="../data/"><i class="fas fa-database"></i> Data</a>
+      <a href="../contact/" class="active"><i class="fas fa-envelope"></i> Contact</a>
     </nav>
   </div>
 </header>
@@ -286,7 +357,7 @@
 <div class="page-hero">
   <div class="page-hero-inner">
     <div class="hero-breadcrumb">
-      <a href="/">Home</a> &nbsp;/&nbsp; Contact
+      <a href="../">Home</a> &nbsp;/&nbsp; Contact
     </div>
     <h1><i class="fas fa-envelope-open-text" style="font-size:1.9rem;margin-right:14px;opacity:0.75"></i>Get in Touch</h1>
     <p>Have a question about our data, methodology, or surveillance reports? Our epidemiology team is here to help. We respond to all inquiries within one business day.</p>
@@ -413,7 +484,7 @@
           <div class="contact-icon email"><i class="fas fa-envelope"></i></div>
           <div class="contact-item-text">
             <strong>General Inquiries</strong>
-            <a href="mailto:info@mydakotahis.com">info@mydakotahis.com</a>
+            <a href="/cdn-cgi/l/email-protection#61080f070e210c1805000a0e15000908124f020e0c"><span class="__cf_email__" data-cfemail="91f8fff7fed1fce8f5f0fafee5f0f9f8e2bff2fefc">[email&#160;protected]</span></a>
           </div>
         </div>
 
@@ -465,22 +536,22 @@
         <h3><i class="fas fa-sitemap" style="color:var(--rota,#1e8449);margin-right:8px"></i>Department Contacts</h3>
         <div class="dept-card">
           <div class="dept-name"><i class="fas fa-microscope" style="color:var(--accent);margin-right:6px"></i>Epidemiology & Disease Surveillance</div>
-          <a class="dept-email" href="mailto:epi@mydakotahis.com">epi@mydakotahis.com</a>
+          <a class="dept-email" href="/cdn-cgi/l/email-protection#98fde8f1d8f5e1fcf9f3f7ecf9f0f1ebb6fbf7f5"><span class="__cf_email__" data-cfemail="4d283d240d2034292c2622392c25243e632e2220">[email&#160;protected]</span></a>
           <div class="dept-desc">Case data, outbreak investigation, surveillance methodology</div>
         </div>
         <div class="dept-card">
           <div class="dept-name"><i class="fas fa-syringe" style="color:var(--hepb,#d68910);margin-right:6px"></i>Immunization Program</div>
-          <a class="dept-email" href="mailto:immunization@mydakotahis.com">immunization@mydakotahis.com</a>
+          <a class="dept-email" href="/cdn-cgi/l/email-protection#1d747070687374677c697472735d7064797c7672697c75746e337e7270"><span class="__cf_email__" data-cfemail="50393d3d253e392a3124393f3e103d2934313b3f24313839237e333f3d">[email&#160;protected]</span></a>
           <div class="dept-desc">Vaccination coverage data, NDIIS inquiries, coverage reports</div>
         </div>
         <div class="dept-card">
           <div class="dept-name"><i class="fas fa-file-alt" style="color:var(--accent2);margin-right:6px"></i>Data & Research Requests</div>
-          <a class="dept-email" href="mailto:data@mydakotahis.com">data@mydakotahis.com</a>
+          <a class="dept-email" href="/cdn-cgi/l/email-protection#6307021702230e1a0702080c17020b0a104d000c0e"><span class="__cf_email__" data-cfemail="ff9b9e8b9ebf92869b9e94908b9e97968cd19c9092">[email&#160;protected]</span></a>
           <div class="dept-desc">Custom data exports, research agreements, API access</div>
         </div>
         <div class="dept-card">
           <div class="dept-name"><i class="fas fa-newspaper" style="color:var(--rota,#1e8449);margin-right:6px"></i>Media & Communications</div>
-          <a class="dept-email" href="mailto:media@mydakotahis.com">media@mydakotahis.com</a>
+          <a class="dept-email" href="/cdn-cgi/l/email-protection#d3beb6b7bab293beaab7b2b8bca7b2bbbaa0fdb0bcbe"><span class="__cf_email__" data-cfemail="9df0f8f9f4fcddf0e4f9fcf6f2e9fcf5f4eeb3fef2f0">[email&#160;protected]</span></a>
           <div class="dept-desc">Press releases, interviews, public statements</div>
         </div>
       </div>
@@ -494,7 +565,7 @@
         </div>
         <div class="faq-item" onclick="toggleFaq(this)">
           <div class="faq-q">How do I request a custom dataset? <i class="fas fa-chevron-down"></i></div>
-          <div class="faq-a">Use the form with topic "Data Request" or email data@mydakotahis.com directly. Specify the disease, date range, geographic scope, and intended use. Requests may require a data use agreement.</div>
+          <div class="faq-a">Use the form with topic "Data Request" or email <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1e7a7f6a7f5e73677a7f75716a7f76776d307d7173">[email&#160;protected]</a> directly. Specify the disease, date range, geographic scope, and intended use. Requests may require a data use agreement.</div>
         </div>
         <div class="faq-item" onclick="toggleFaq(this)">
           <div class="faq-q">Is the dashboard data publicly available? <i class="fas fa-chevron-down"></i></div>
@@ -514,12 +585,12 @@
 <footer>
   <strong>MyDakota Health Intelligence System</strong> &nbsp;|&nbsp;
   North Dakota Department of Health &nbsp;|&nbsp;
-  <a href="mailto:info@mydakotahis.com" style="color:rgba(255,255,255,0.55);text-decoration:none;">info@mydakotahis.com</a> &nbsp;|&nbsp;
+  <a href="/cdn-cgi/l/email-protection#bed7d0d8d1fed3c7dadfd5d1cadfd6d7cd90ddd1d3" style="color:rgba(255,255,255,0.55);text-decoration:none;"><span class="__cf_email__" data-cfemail="dfb6b1b9b09fb2a6bbbeb4b0abbeb7b6acf1bcb0b2">[email&#160;protected]</span></a> &nbsp;|&nbsp;
   <a href="https://www.mydakotahis.com" style="color:rgba(255,255,255,0.55);text-decoration:none;">www.mydakotahis.com</a> &nbsp;|&nbsp;
   &copy; 2022
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // ── LAST UPDATED ──────────────────────────────────────────────────────────
   (function() {
     const d = new Date();

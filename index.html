@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <!-- ── SOCIAL MEDIA META TAGS ─────────────────────────────────────── -->
   <!-- Open Graph (Facebook, LinkedIn, WhatsApp, iMessage) -->
   <meta property="og:type"        content="website" />
@@ -54,7 +53,8 @@
       --shadow: 0 2px 16px rgba(26,39,68,0.08);
     }
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:"DM Sans", sans-serif; background:var(--bg); color:var(--primary); line-height:1.6; }
+    body { font-family:"DM Sans", sans-serif; background:var(--bg); color:var(--primary); line-height:1.6; overflow-x:hidden; }
+    * { min-width: 0; }
     
     /* HEADER */
     header {
@@ -159,7 +159,7 @@
       border-radius:12px; padding:20px;
       box-shadow: var(--shadow);
     }
-    .card.full { grid-column:1/-1; }
+    .card.full { grid-column:1/-1; } .card.span2 { grid-column: span 2; }
     .card.half { grid-column:span 1; }
     .card h3 {
       font-family:"DM Serif Display",serif; font-size:1rem;
@@ -255,11 +255,111 @@
       font-size:0.85rem;
     }
     footer strong { color:white; }
+    /* ── RESPONSIVE / MOBILE ─────────────────────────────────────────────── */
 
-    /* RESPONSIVE */
-    @media (max-width:900px) {
-      .dash-grid { grid-template-columns:1fr; }
-      .stat-row, .statewide-stats { grid-template-columns:repeat(2,1fr); }
+    /* Tablet */
+    @media (max-width: 1024px) {
+      .dash-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-row  { grid-template-columns: repeat(2, 1fr); }
+      .statewide-stats { grid-template-columns: repeat(2, 1fr); }
+      .card.full { grid-column: 1 / -1; }
+    }
+
+    /* Large phone / small tablet */
+    @media (max-width: 768px) {
+      /* Header */
+      .header-inner { padding: 0 14px; height: auto; min-height: 56px; flex-wrap: wrap; gap: 6px; padding-top: 10px; padding-bottom: 10px; }
+      .logo { font-size: 1.1rem; }
+      .logo-icon { width: 30px; height: 30px; font-size: 0.9rem; }
+      .header-subtitle { font-size: 0.65rem; }
+      nav { gap: 2px; }
+      nav a { padding: 6px 8px; font-size: 0.75rem; }
+
+      /* Tabs */
+      .tabs-inner { padding: 0 8px; gap: 0; }
+      .tab-btn { padding: 10px 12px; font-size: 0.75rem; }
+      .tab-btn i { display: none; }
+
+      /* Main padding */
+      main { padding: 16px 12px; }
+
+      /* Filter bar */
+      .filter-bar { flex-direction: column; align-items: stretch; gap: 12px; padding: 14px; }
+      .filter-group, .ctrl-group { flex-wrap: wrap; gap: 6px; }
+      .filter-bar select, .filter-bar input { min-width: 0; width: 100%; }
+      .filter-badge { margin-left: 0; align-self: flex-start; }
+
+      /* Stat cards */
+      .stat-row { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .stat-card { padding: 14px; }
+      .stat-value { font-size: 1.6rem; }
+
+      /* Dashboard grid */
+      .dash-grid { grid-template-columns: 1fr; gap: 14px; }
+      .card.full, .card { grid-column: 1; }
+      .card[style*="grid-column:span 2"] { grid-column: 1 !important; }
+      .card[style*="span 2"] { grid-column: 1 !important; }
+
+      /* Charts */
+      .chart-wrap { height: 200px; }
+      .chart-wrap.tall { height: 220px; }
+      .chart-wrap.short { height: 160px; }
+      canvas { max-width: 100% !important; }
+
+      /* Map */
+      #map { height: 260px; }
+
+      /* Statewide */
+      .statewide-stats { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .sw-stat { padding: 14px; }
+      .sw-stat-num { font-size: 1.8rem; }
+
+      /* Methodology */
+      .method-section { padding: 20px; }
+      .method-section h2 { font-size: 1.4rem; }
+      .contact-box { flex-direction: column; gap: 10px; }
+
+      /* Table */
+      .data-table { font-size: 0.78rem; }
+      .data-table th, .data-table td { padding: 8px 10px; }
+
+      /* Map legend */
+      .map-legend { gap: 8px; font-size: 0.72rem; }
+    }
+
+    /* Small phones */
+    @media (max-width: 480px) {
+      .header-inner { padding: 8px 12px; }
+      .logo { font-size: 1rem; gap: 8px; }
+      .logo-icon { width: 28px; height: 28px; font-size: 0.8rem; flex-shrink: 0; }
+      .header-subtitle { display: none; }
+      nav a span, nav a { font-size: 0.72rem; padding: 5px 7px; }
+
+      .tabs-inner { padding: 0 4px; }
+      .tab-btn { padding: 9px 9px; font-size: 0.7rem; }
+
+      main { padding: 12px 10px; }
+
+      .stat-row { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .stat-value { font-size: 1.4rem; }
+      .stat-label { font-size: 0.68rem; }
+      .stat-sub { font-size: 0.7rem; }
+
+      .chart-wrap { height: 180px; }
+      .chart-wrap.tall { height: 200px; }
+      #map { height: 220px; }
+
+      .filter-bar { padding: 12px; gap: 10px; }
+      .filter-bar label { font-size: 0.72rem; }
+      .filter-bar select { font-size: 0.82rem; padding: 7px 10px; }
+
+      .card { padding: 14px; }
+      .card h3 { font-size: 0.9rem; }
+
+      .statewide-stats { grid-template-columns: 1fr 1fr; }
+      .sw-stat-num { font-size: 1.5rem; }
+    
+
       .card.full { grid-column:1; }
     }
   </style>
@@ -298,7 +398,7 @@
 </main>
 
 <footer>
-  <strong>MyDakota Health Intelligence System</strong> &nbsp;|&nbsp; North Dakota Department of Health &nbsp;|&nbsp; Data updated weekly &nbsp;|&nbsp; &copy; 2022
+  <strong>MyDakota Health Intelligence System</strong> &nbsp;|&nbsp; North Dakota Department of Health &nbsp;|&nbsp; Data updated weekly &nbsp;|&nbsp; &copy; 2025
 </footer>
 
 <script>
@@ -501,7 +601,7 @@ function renderMethodology() {
       <i class="fas fa-envelope"></i>
       <div>
         <strong style="color:white">Questions or Data Requests?</strong><br>
-        Contact the NDDoH Epidemiology Section at <a href="mailto:info@mydakotahis.com">info@mydakotahis.com</a>
+        Contact the NDDoH Epidemiology Section at <a href="mailto:info@mydakotahis.gov">info@mydakotahis.gov</a>
       </div>
     </div>
   </div>`;
@@ -546,7 +646,7 @@ function renderStatewide() {
       </div>`).join('')}
   </div>
   <div class="dash-grid">
-    <div class="card" style="grid-column:span 2">
+    <div class="card" class="span2">
       <h3>Monthly Case Trends — All Diseases</h3>
       <div class="chart-wrap tall"><canvas id="swTrendChart"></canvas></div>
     </div>
@@ -676,7 +776,7 @@ function renderDisease(diseaseKey) {
         <span class="legend-item"><span class="legend-dot" style="background:#800026"></span>Very High</span>
       </div>
     </div>
-    <div class="card" style="grid-column:span 2">
+    <div class="card" class="span2">
       <h3>Monthly Case Trend</h3>
       <div class="chart-wrap"><canvas id="trendChart"></canvas></div>
     </div>
