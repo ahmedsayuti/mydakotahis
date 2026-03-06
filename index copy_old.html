@@ -1015,8 +1015,17 @@ function renderRiskDashboard(diseaseKey, countyFilter) {
           <h2><i class="fas fa-biohazard" style="margin-right:8px;opacity:0.8"></i>Infection Risk Transmission Model</h2>
           <span class="risk-badge">Model</span>
         </div>
+        <p>Estimated risk of infection/transmission per county, calculated as: <strong>% Unvaccinated × Reported Cases × 18</strong>. Higher scores indicate elevated community transmission risk.</p>
       </div>
     </div>
+    <div class="risk-formula-bar">
+      <i class="fas fa-calculator" style="color:var(--accent2)"></i>
+      <strong>Formula:</strong>
+      <code>Risk Score = (1 − Vaccination Coverage%) × Cases in Area × 18</code>
+      <span>·</span>
+      <span>Multiplier <strong>18</strong> = estimated secondary cases per unvaccinated contact in a partially immune population</span>
+    </div>
+
     <div class="risk-stat-row">
       <div class="risk-stat-card high">
         <div class="risk-stat-label">Statewide Avg Risk Score</div>
