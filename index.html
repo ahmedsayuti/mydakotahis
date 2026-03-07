@@ -28,7 +28,7 @@
   <!-- General SEO -->
   <meta name="description" content="Real-time surveillance of childhood vaccine-preventable diseases across North Dakota's 53 counties. Explore Measles, Hepatitis A, Rotavirus, and RSV case data with interactive maps and charts." />
   <meta name="keywords"    content="North Dakota, disease surveillance, childhood diseases, Measles, Hepatitis A, Rotavirus, RSV, vaccination coverage, public health, NDDoH, HIS dashboard" />
-  <meta name="author"      content="North Dakota Department of Health – MyDakota HIS" />
+  <meta name="author"      content="MyDakota HIS" />
   <link  rel="canonical"   href="https://www.mydakotahis.com/" />
   <!-- ─────────────────────────────────────────────────────────────────── -->
   <title>MyDakota HIS – Childhood Disease Dashboard</title>
@@ -459,7 +459,7 @@
 </main>
 
 <footer>
-  <strong>MyDakota Health Intelligence System</strong> &nbsp;|&nbsp; North Dakota Department of Health &nbsp;|&nbsp; Data updated weekly &nbsp;|&nbsp; &copy; 2022
+  <strong>MyDakota Health Intelligence System</strong> &nbsp;|&nbsp; Data updated weekly &nbsp;|&nbsp; &copy; 2022
 </footer>
 
 <script>
@@ -664,29 +664,12 @@ function renderMethodology() {
     <p>The dashboard covers case data from <strong>October 2022 through present</strong>, spanning years 2022–2026.</p>
 
     <h3>Infection Risk Transmission Model</h3>
-    <p>Each disease tab includes a dedicated <strong>Risk Transmission Model</strong> dashboard that estimates the relative risk of infection and community transmission at the county level. The model uses the following formula:</p>
-    <p style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 16px;font-family:monospace;font-size:0.9rem;margin:12px 0">
-      <strong>Risk Score = (1 − Vaccination Coverage Rate) × Reported Cases × 18</strong>
-    </p>
-    <p>Where each component represents:</p>
-    <ul>
-      <li><strong>1 − Vaccination Coverage Rate:</strong> The proportion of the county population that is unvaccinated and therefore susceptible to infection. Derived from NDIIS coverage data averaged across gender and race strata.</li>
-      <li><strong>Reported Cases:</strong> Total confirmed case count for that county and disease within the selected time period.</li>
-      <li><strong>Multiplier 18:</strong> An estimated reproduction factor representing the average number of secondary infections a single unvaccinated individual may generate within a partially immune population, based on standard epidemiological modelling assumptions for vaccine-preventable diseases.</li>
-    </ul>
-    <p><strong>Risk Level Thresholds:</strong></p>
-    <ul>
-      <li><strong style="color:#c0392b">Critical (≥ 500):</strong> Very high transmission risk — urgent review of vaccination coverage recommended.</li>
-      <li><strong style="color:#d68910">High (200–499):</strong> Elevated risk — targeted outreach and coverage improvement warranted.</li>
-      <li><strong style="color:#2471a3">Moderate (80–199):</strong> Manageable risk — continued monitoring advised.</li>
-      <li><strong style="color:#1e8449">Low (&lt; 80):</strong> Risk within acceptable range given current vaccination coverage.</li>
-    </ul>
-    <p><em>Note: Risk scores are relative estimates intended for public health prioritisation. They do not represent absolute probabilities of individual infection and should be interpreted alongside clinical and contextual factors.</em></p>
+    <p>Each disease tab includes a dedicated <strong>Risk Transmission Model</strong> dashboard that estimates the relative risk of infection and community transmission at the county level.</p>
     <div class="contact-box">
       <i class="fas fa-envelope"></i>
       <div>
         <strong style="color:white">Questions or Data Requests?</strong><br>
-        Contact the NDDoH Epidemiology Section at <a href="mailto:info@mydakotahis.com">info@mydakotahis.com</a>
+        Contact the MyDakota HIS General Enquiries Department at <a href="mailto:info@mydakotahis.com">info@mydakotahis.com</a>
       </div>
     </div>
   </div>`;
