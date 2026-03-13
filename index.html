@@ -268,6 +268,92 @@
     }
 
     /* Large phone / small tablet */
+
+    /* ── MOBILE TAB DRAWER ─────────────────────────────────── */
+    /* Toggle bar — hidden on desktop */
+    #tabToggleBar { display: none; }
+
+    @media (max-width: 768px) {
+
+      /* Make the tabs-inner animate open/closed */
+      #tabsWrapper { overflow: hidden; }
+
+      .tabs-inner {
+        max-height: 0;
+        overflow: hidden;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1),
+                    padding    0.35s cubic-bezier(0.4,0,0.2,1);
+      }
+
+      #tabsWrapper.tabs-open .tabs-inner {
+        max-height: 380px;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+      }
+
+      /* Toggle bar */
+      #tabToggleBar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 14px;
+        cursor: pointer;
+        user-select: none;
+        background: var(--primary);
+        border-top: 1px solid rgba(255,255,255,0.12);
+        min-height: 42px;
+      }
+
+      #tabToggleLabel {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: white;
+        letter-spacing: 0.01em;
+      }
+
+      #tabToggleLabel i {
+        font-size: 0.85rem;
+        opacity: 0.9;
+      }
+
+      #tabToggleChevron {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.12);
+        color: rgba(255,255,255,0.8);
+        font-size: 0.72rem;
+        transition: transform 0.3s ease, background 0.2s;
+        flex-shrink: 0;
+      }
+
+      #tabsWrapper.tabs-open #tabToggleChevron {
+        transform: rotate(180deg);
+        background: rgba(255,255,255,0.22);
+      }
+
+      /* Active tab name gets accent colour in toggle bar */
+      #tabToggleLabel.t-measles   { color: var(--measles); }
+      #tabToggleLabel.t-hepa      { color: var(--hepa); }
+      #tabToggleLabel.t-influenza { color: var(--influenza); }
+      #tabToggleLabel.t-rota      { color: var(--rota); }
+      #tabToggleLabel.t-rsv       { color: var(--rsv); }
+
+      /* Separator line between toggle bar and open drawer */
+      #tabsWrapper.tabs-open #tabToggleBar {
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+
+    }
+
     @media (max-width: 768px) {
       /* Header */
       .header-inner { padding: 0 14px; height: auto; min-height: 56px; flex-wrap: wrap; gap: 6px; padding-top: 10px; padding-bottom: 10px; }
@@ -277,10 +363,42 @@
       nav { gap: 2px; }
       nav a { padding: 6px 8px; font-size: 0.75rem; }
 
-      /* Tabs */
-      .tabs-inner { padding: 0 8px; gap: 0; }
-      .tab-btn { padding: 10px 12px; font-size: 0.75rem; }
-      .tab-btn i { display: none; }
+      /* Tabs — 2-column wrapping grid */
+      .tabs-inner {
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 10px 12px;
+        overflow: visible;
+      }
+      .tab-btn {
+        flex: 0 0 calc(50% - 4px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        padding: 10px 6px;
+        font-size: 0.73rem;
+        white-space: normal;
+        text-align: center;
+        line-height: 1.3;
+        border-radius: 8px;
+        border-bottom: 3px solid transparent;
+        background: rgba(255,255,255,0.07);
+        min-height: 54px;
+      }
+      .tab-btn i {
+        display: block;
+        font-size: 1rem;
+        margin: 0;
+      }
+      .tab-btn:hover { background: rgba(255,255,255,0.13); }
+      .tab-btn.active { background: rgba(255,255,255,0.15); }
+      .tab-btn.t-measles.active   { background: rgba(192,57,43,0.28); }
+      .tab-btn.t-hepa.active      { background: rgba(211,84,0,0.28); }
+      .tab-btn.t-influenza.active { background: rgba(125,60,152,0.28); }
+      .tab-btn.t-rota.active      { background: rgba(30,132,73,0.28); }
+      .tab-btn.t-rsv.active       { background: rgba(36,113,163,0.28); }
 
       /* Main padding */
       main { padding: 16px 12px; }
@@ -337,8 +455,15 @@
       .header-subtitle { display: none; }
       nav a span, nav a { font-size: 0.72rem; padding: 5px 7px; }
 
-      .tabs-inner { padding: 0 4px; }
-      .tab-btn { padding: 9px 9px; font-size: 0.7rem; }
+      .tabs-inner { padding: 8px 10px; gap: 7px; }
+      .tab-btn {
+        flex: 0 0 calc(50% - 3.5px);
+        font-size: 0.68rem;
+        padding: 9px 5px;
+        min-height: 50px;
+        gap: 4px;
+      }
+      .tab-btn i { font-size: 0.9rem; }
 
       main { padding: 12px 10px; }
 
@@ -438,11 +563,16 @@
     </a>
     <nav>
       <a href="/"><i class="fas fa-home"></i> Home</a>
-      <a href="/data/"><i class="fas fa-database"></i> Data</a>
+      <a href="data.html"><i class="fas fa-database"></i> Data</a>
       <a href="/contact/"><i class="fas fa-envelope"></i> Contact</a>
     </nav>
   </div>
-  <div class="tabs-wrapper">
+  <div class="tabs-wrapper" id="tabsWrapper">
+    <!-- Mobile-only collapsed tab toggle bar -->
+    <div id="tabToggleBar" onclick="toggleTabDrawer()">
+      <span id="tabToggleLabel"><i class="fas fa-book-open"></i> Methodology</span>
+      <span id="tabToggleChevron"><i class="fas fa-chevron-down"></i></span>
+    </div>
     <div class="tabs-inner" id="tabContainer">
       <button class="tab-btn active" data-tab="methodology"><i class="fas fa-book-open"></i> Methodology</button>
       <button class="tab-btn" data-tab="statewide"><i class="fas fa-map-marked-alt"></i> Statewide &amp; Countrywide Coverage</button>
@@ -460,7 +590,7 @@
 </main>
 
 <footer>
-  <strong>MyDakota Health Intelligence System</strong> &nbsp;|&nbsp; Data updated weekly &nbsp;|&nbsp; &copy; 2022
+  <strong>MyDakota Health Intelligence System</strong> &nbsp;|&nbsp; North Dakota Department of Health &nbsp;|&nbsp; Data updated weekly &nbsp;|&nbsp; &copy; 2022
 </footer>
 
 <script>
@@ -667,7 +797,12 @@ function renderMethodology() {
 
     <h3 style="margin:28px 0 10px;font-family:'DM Serif Display',serif;font-size:1.15rem">Infection Risk Transmission Model</h3>
     <p>Each disease tab includes a dedicated <strong>Risk Transmission Model</strong> dashboard that estimates the relative risk of infection and community transmission at the county level.</p>
-    
+    <p style="margin-top:10px">The Measles tab features two enhanced epidemiological models derived from 2025 kindergarten MMR rates (ND HHS Power BI Dashboard):</p>
+    <ul style="padding-left:20px;line-height:2;margin-top:8px">
+      <li><strong>Disease Risk Model:</strong> R&#x2091; = R&#x2080; &times; (1 &minus; MMR Rate), R&#x2080; = 15 (measles midpoint). Risk Score weighted 70% transmission + 30% immunity gap from 95% threshold, scaled 0&ndash;10.</li>
+      <li><strong>Population-Adjusted Risk Model:</strong> Enhanced score incorporating R&#x2091; (40%), immunity gap (20%), susceptible population size (30%), and under-5 share (10%). Population from U.S. Census ACS 5-Year Estimates 2019&ndash;2023.</li>
+    </ul>
+
     <div class="contact-box">
       <i class="fas fa-envelope"></i>
       <div>
@@ -700,10 +835,9 @@ function renderStatewide() {
   <div class="filter-bar">
     <label>Year</label>
     <select id="swYearFilter" onchange="renderStatewide()">
-      <option value="all">All Years</option>
-      <option value="2022">2022</option><option value="2023">2023</option>
-      <option value="2024">2024</option><option value="2025">2025</option>
-      <option value="2026">2026</option>
+      <option value="all" ${yearFilter==='all'   ? 'selected' : ''}>All Years</option>
+      <option value="2022" ${yearFilter==='2022' ? 'selected' : ''}>2022</option><option value="2023" ${yearFilter==='2023' ? 'selected' : ''}>2023</option>
+      <option value="2024" ${yearFilter==='2024' ? 'selected' : ''}>2024</option><option value="2025" ${yearFilter==='2025' ? 'selected' : ''}>2025</option><option value="2026" ${yearFilter==='2026' ? 'selected' : ''}>2026</option>
     </select>
     <span class="filter-badge"><i class="fas fa-layer-group"></i>&nbsp; Statewide &amp; Countrywide — All Counties</span>
   </div>
@@ -1461,6 +1595,90 @@ document.getElementById('tabContainer').addEventListener('click', e => {
   else if (tab === 'measles') renderMeasles();
   else renderDisease(tab);
 });
+
+// ── MOBILE TAB DRAWER ────────────────────────────────────────────────────
+(function() {
+  var wrapper  = document.getElementById('tabsWrapper');
+  var label    = document.getElementById('tabToggleLabel');
+  var open     = false; // start collapsed — user sees toggle bar on load
+
+  // Map of data-tab → display info for the toggle bar label
+  var TAB_META = {
+    methodology: { icon: 'fa-book-open',        text: 'Methodology',             cls: '' },
+    statewide:   { icon: 'fa-map-marked-alt',   text: 'Statewide & Countrywide', cls: '' },
+    measles:     { icon: 'fa-virus',             text: 'Measles',                 cls: 't-measles'   },
+    hepa:        { icon: 'fa-syringe',           text: 'Hepatitis A',             cls: 't-hepa'      },
+    influenza:   { icon: 'fa-head-side-cough',   text: 'Influenza',               cls: 't-influenza' },
+    rota:        { icon: 'fa-bacteria',          text: 'Rotavirus',               cls: 't-rota'      },
+    rsv:         { icon: 'fa-lungs-virus',       text: 'RSV',                     cls: 't-rsv'       },
+  };
+
+  function updateToggleLabel(tabKey) {
+    if (!label) return;
+    var m = TAB_META[tabKey] || { icon: 'fa-circle', text: tabKey, cls: '' };
+    label.innerHTML = '<i class="fas ' + m.icon + '"></i> ' + m.text;
+    label.className = m.cls;
+  }
+
+  window.toggleTabDrawer = function() {
+    if (window.innerWidth > 768) return;
+    var scrollY = window.scrollY || window.pageYOffset;
+    if (!open && scrollY > 10) {
+      // Scroll to top first, then open drawer once we arrive
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      var waited = 0;
+      var poll = setInterval(function() {
+        waited += 16;
+        var y = window.scrollY || window.pageYOffset;
+        if (y <= 10 || waited > 600) {
+          clearInterval(poll);
+          open = true;
+          if (wrapper) wrapper.classList.add('tabs-open');
+        }
+      }, 16);
+    } else {
+      // Already at top (or closing) — toggle immediately
+      open = !open;
+      if (wrapper) wrapper.classList.toggle('tabs-open', open);
+    }
+  };
+
+  // Auto-collapse on scroll down (mobile only)
+  var lastY = 0;
+  window.addEventListener('scroll', function() {
+    if (window.innerWidth > 768) return;
+    var y = window.scrollY || window.pageYOffset;
+    if (y > lastY && y > 60 && open) {
+      // scrolling down — collapse
+      open = false;
+      if (wrapper) wrapper.classList.remove('tabs-open');
+    }
+    lastY = y;
+  }, { passive: true });
+
+  // Hook into tab selection to update label and close drawer
+  var originalListener = document.getElementById('tabContainer');
+  if (originalListener) {
+    originalListener.addEventListener('click', function(e) {
+      var btn = e.target.closest('.tab-btn');
+      if (!btn) return;
+      var tabKey = btn.dataset.tab;
+      updateToggleLabel(tabKey);
+      // Close drawer after a short delay so tap feels responsive
+      if (window.innerWidth <= 768 && open) {
+        setTimeout(function() {
+          open = false;
+          if (wrapper) wrapper.classList.remove('tabs-open');
+        }, 180);
+      }
+    });
+  }
+
+  // Set initial label to whichever tab is active on load
+  var activeBtn = document.querySelector('.tab-btn.active');
+  if (activeBtn) updateToggleLabel(activeBtn.dataset.tab);
+})();
+
 
 function renderMeasles() {
   destroyMap();
