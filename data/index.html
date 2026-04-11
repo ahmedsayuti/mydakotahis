@@ -64,6 +64,15 @@
     nav a { color:rgba(255,255,255,0.7); text-decoration:none; padding:8px 14px; border-radius:6px; font-size:0.85rem; font-weight:500; transition:all 0.2s; }
     nav a:hover, nav a.active { color:white; background:rgba(255,255,255,0.15); }
     nav a.active { background:rgba(192,57,43,0.5); }
+    nav a.nav-guide {
+      color: white;
+      background: var(--accent);
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    nav a.nav-guide:hover { background: #a93226; }
 
     /* ── PAGE HERO ── */
     .page-hero {
@@ -325,6 +334,7 @@
       <a href="../"><i class="fas fa-home"></i> Home</a>
       <a href="../data/" class="active"><i class="fas fa-database"></i> Data</a>
       <a href="../contact/"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="../src/MyDakotaHIS_User_Guide.pdf" download class="nav-guide"><i class="fas fa-file-pdf"></i> User Guide</a>
     </nav>
   </div>
 </header>
