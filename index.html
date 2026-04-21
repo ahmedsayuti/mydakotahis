@@ -557,6 +557,108 @@
     @media (max-width:768px)  { .risk-grid { grid-template-columns:1fr; padding:14px; } .risk-stat-row { grid-template-columns:1fr 1fr; padding:14px; } .risk-section-header { padding:14px 16px; } .risk-formula-bar { padding:10px 14px; } }
     @media (max-width:480px)  { .risk-stat-row { grid-template-columns:1fr 1fr; padding:12px; } .risk-stat-value { font-size:1.4rem; } .risk-grid { padding:12px; gap:12px; } }
 
+    /* ── RESEARCHER PROFILE ─────────────────────────────────────────────── */
+    .researcher-section {
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 2px solid var(--border);
+    }
+    .researcher-section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .researcher-card {
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+      background: linear-gradient(135deg, #f8f7f4 0%, #ffffff 100%);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      box-shadow: 0 4px 20px rgba(26,39,68,0.07);
+    }
+    .researcher-photo-wrap {
+      flex-shrink: 0;
+    }
+    .researcher-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      border: 3px solid white;
+      box-shadow: 0 4px 16px rgba(26,39,68,0.15);
+      display: block;
+    }
+    .researcher-photo-placeholder {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary) 0%, #2471a3 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2.4rem;
+      border: 3px solid white;
+      box-shadow: 0 4px 16px rgba(26,39,68,0.15);
+    }
+    .researcher-info { flex: 1; min-width: 0; }
+    .researcher-name {
+      font-family: "DM Serif Display", serif;
+      font-size: 1.45rem;
+      color: var(--primary);
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+    .researcher-role {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .researcher-bio {
+      font-size: 0.93rem;
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .researcher-interests {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+    .interest-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+    .interest-tag i { color: var(--accent2); font-size: 0.7rem; }
+    @media (max-width: 600px) {
+      .researcher-card { flex-direction: column; align-items: center; text-align: center; gap: 18px; }
+      .researcher-interests { justify-content: center; }
+      .researcher-role { margin: 0 auto 16px; }
+    }
+
   </style>
 </head>
 <body>
@@ -813,6 +915,46 @@ function renderMethodology() {
       <div>
         <strong style="color:white">Questions or Data Requests?</strong><br>
         Contact the MyDakota HIS General Enquiries Department at <a href="mailto:info@mydakotahis.com">info@mydakotahis.com</a>
+      </div>
+    </div>
+
+    <!-- ── LEAD RESEARCHER ─────────────────────────────────────────────── -->
+    <div class="researcher-section">
+      <p class="researcher-section-label"><i class="fas fa-user-md" style="margin-right:6px;color:var(--accent2)"></i>Lead Researcher</p>
+      <div class="researcher-card">
+        <div class="researcher-photo-wrap">
+          <img
+            src="src/Iyobosa_Omoregie.jpg"
+            alt="Dr. Iyobosa Sonia Omoregie"
+            class="researcher-photo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+          />
+          <div class="researcher-photo-placeholder" style="display:none">
+            <i class="fas fa-user-md"></i>
+          </div>
+        </div>
+        <div class="researcher-info">
+          <h2 class="researcher-name">Dr. Iyobosa Sonia Omoregie</h2>
+          <span class="researcher-role">
+            <i class="fas fa-microscope"></i> Post Doctoral Research Fellow
+          </span>
+          <p class="researcher-bio">
+            Post Doctoral Research Fellow at the <strong>Center for Social Research (CSR)</strong> at
+            <strong>North Dakota State University (NDSU)</strong>, where she pursued a Master's
+            degree in Public Health with a specialization in <strong>Epidemiology</strong>.
+            Iyobosa holds a <strong>Medical Degree from Kyiv Medical University, Ukraine</strong>.
+            Her scholarship underpins the surveillance methodology, risk-transmission models, and
+            county-level analyses presented throughout this dashboard.
+          </p>
+          <div class="researcher-interests">
+            <span class="interest-tag"><i class="fas fa-chart-line"></i> Public Health Surveillance</span>
+            <span class="interest-tag"><i class="fas fa-virus"></i> Infectious Diseases</span>
+            <span class="interest-tag"><i class="fas fa-heartbeat"></i> Chronic Diseases</span>
+            <span class="interest-tag"><i class="fas fa-book-reader"></i> Health Literacy</span>
+            <span class="interest-tag"><i class="fas fa-balance-scale"></i> Health Equity</span>
+            <span class="interest-tag"><i class="fas fa-map-marker-alt"></i> Rural Health</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>`;
